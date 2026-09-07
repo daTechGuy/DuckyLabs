@@ -1,5 +1,5 @@
 REM ============================================================
-REM Lab 03: Staged Payload from Onboard USB Storage
+REM Lab 06: Staged Payload from Onboard USB Storage
 REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
 REM Requires: firmware/hardware with dual HID+STORAGE attack mode
 REM ("Twin Duck") - not all Ducky units support ATTACKMODE STORAGE.

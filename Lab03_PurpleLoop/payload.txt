@@ -1,0 +1,18 @@
+REM ============================================================
+REM Lab 03 (PURPLE): a payload that leaves a visible artifact
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Still safe and reversible: it uses one PowerShell command to
+REM drop a plain text file on the current user's Desktop. No admin
+REM rights. Delete the file (or run cleanup.ps1) to undo it.
+REM
+REM This is the first payload that leaves something ON DISK - which
+REM is exactly what makes it a good target for the blue team.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 300
+STRING powershell -Command "Set-Content -Path $env:USERPROFILE\Desktop\YOU_WERE_HERE.txt -Value 'A USB device wrote this file. This is a Purple Team lab - delete me when done.'"
+ENTER

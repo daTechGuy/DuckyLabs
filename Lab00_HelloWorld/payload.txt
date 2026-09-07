@@ -1,0 +1,31 @@
+REM ============================================================
+REM Lab 00: Hello, World! - your first Rubber Ducky payload
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM This payload is harmless. It opens Notepad and types a
+REM message. It needs NO administrator rights and changes
+REM nothing on the computer. Close Notepad without saving and
+REM every trace is gone. See DuckyLabs/README.md for the rules
+REM that still apply to ALL labs (controlled lab machines only).
+REM ============================================================
+
+REM Wait 1 second so Windows finishes recognizing the "keyboard".
+DELAY 1000
+
+REM Hold the Windows key and press R -> opens the Run box.
+GUI r
+DELAY 300
+
+REM Type the word notepad and press Enter to launch it.
+STRING notepad
+ENTER
+
+REM Give Notepad time to open before we start "typing".
+DELAY 800
+
+REM Now type our message. This is exactly like a person typing,
+REM except the Ducky does it in a fraction of a second.
+STRING Hello, World! This was typed by a USB Rubber Ducky, not by a human.
+ENTER
+STRING Your computer could not tell the difference between me and your real keyboard.

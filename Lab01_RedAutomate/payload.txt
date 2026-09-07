@@ -1,0 +1,31 @@
+REM ============================================================
+REM Lab 01 (RED): Automate the keyboard
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Still harmless: it just launches Calculator and Notepad, two
+REM apps that ship with Windows. No admin rights, nothing
+REM installed. The POINT is speed - watch how one payload drives
+REM several apps faster than you could click.
+REM ============================================================
+
+DELAY 1000
+
+REM --- Launch app #1: Calculator ---
+GUI r
+DELAY 300
+STRING calc
+ENTER
+DELAY 600
+
+REM --- Launch app #2: Notepad, and leave the attacker's note ---
+GUI r
+DELAY 300
+STRING notepad
+ENTER
+DELAY 800
+STRING A red team just drove your keyboard for two seconds.
+ENTER
+STRING Swap "calc" and "notepad" for any command YOUR account can run,
+ENTER
+STRING and the Ducky runs it - instantly, as you, without asking.

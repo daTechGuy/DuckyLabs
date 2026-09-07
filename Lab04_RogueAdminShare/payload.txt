@@ -1,5 +1,5 @@
 REM ============================================================
-REM Lab 01: Rogue Admin Account + Open SMB Share
+REM Lab 04: Rogue Admin Account + Open SMB Share
 REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
 REM
 REM WARNING: Run only against an isolated, snapshotted VM.
