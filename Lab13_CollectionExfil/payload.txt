@@ -1,5 +1,5 @@
 REM ============================================================
-REM Lab 12: Collection & Exfiltration
+REM Lab 13: Collection & Exfiltration
 REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
 REM
 REM WARNING: Run only against an isolated, snapshotted VM.

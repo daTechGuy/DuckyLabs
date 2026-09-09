@@ -1,7 +1,7 @@
-# Lab 13 — Close the Door: Preventing HID Injection
+# Lab 16 — Close the Door: Preventing HID Injection
 
 **This is the last lab, and the only one that's proactive instead of
-reactive.** Labs 05–12 all answered "how do we catch this after it
+reactive.** Labs 05–15 all answered "how do we catch this after it
 happened?" This one answers a different question: **could we have stopped
 it from running at all?**
 
@@ -62,10 +62,10 @@ time, gets refused.
 Pick any earlier payload — Lab 04's or Lab 08's are good choices — and try
 to run it against the now-hardened VM.
 
-(If you built Lab 09's Registry-Run-key persistence or Lab 12's exfil
-payload, those are worth retrying here too — does blocking the device at
-the door beat *every* later stage, or just the ones that need a fresh USB
-enumeration?)
+(If you built Lab 09's Registry-Run-key persistence, Lab 13's exfil
+payload, or Lab 15's full chain, those are worth retrying here too — does
+blocking the device at the door beat *every* later stage, or just the ones
+that need a fresh USB enumeration?)
 
 - Does it run at all?
 - If you have a *second* Ducky, or can reset the first one's USB identity,
@@ -82,21 +82,21 @@ Nothing here is free. Bring these to the debrief:
   for legitimate new hardware, which is ongoing maintenance work.
 - This policy is **class-wide**. A more surgical real-world control
   allow-lists specific Vendor ID/Product ID (VID/PID) combinations instead
-  — Lab 11's discussion section mentioned this as the harder-to-deploy but
+  — Lab 12's discussion section mentioned this as the harder-to-deploy but
   more precise version of the same idea.
 - Prevention and detection aren't a choice between one or the other. This
   control can fail (a misconfigured allow-list, a device that spoofs an
-  allowed VID/PID) — which is exactly why Labs 05–12 still matter as a
+  allowed VID/PID) — which is exactly why Labs 05–15 still matter as a
   second layer.
 
 ## The whole course, in one sentence
 
 Labs 00–03 taught you *how* a keyboard is trusted and how to write for one.
 Labs 04–06 taught you to think like red, then blue, then both together.
-Labs 07–12 took that into a real environment with real logs, real
-persistence, and real exfiltration. This lab closes the loop: now that you
-know how the attack works and how to catch it, you also know how to stop
-it at the door.
+Labs 07–15 took that into a real environment with real logs, real
+persistence, real exfiltration, and a real end-to-end incident. This lab
+closes the loop: now that you know how the attack works and how to catch
+it, you also know how to stop it at the door.
 
 ## Cleanup
 

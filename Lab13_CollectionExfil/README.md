@@ -1,4 +1,4 @@
-# Lab 12 — Collection & Exfiltration
+# Lab 13 — Collection & Exfiltration
 
 **Payload:** [payload.txt](payload.txt)
 **Collector:** [lab_collector.py](lab_collector.py) — runs on your isolated
@@ -9,7 +9,7 @@ Over C2 Channel)
 
 Every advanced lab so far has stopped at "code executes." This one covers
 what a real intrusion does *next*: find something worth taking, and get it
-out. It's the one gap Labs 07–11 all skip — and, on purpose, the one where
+out. It's the one gap Labs 07–12 all skip — and, on purpose, the one where
 the blue-team story is the most honest about its limits.
 
 ## Setup (before running)
@@ -90,7 +90,7 @@ not the file."**
   to catch with the same detection approach used here?
 - Given the "honest gap" above, what control — not a detection, a
   *prevention* — would stop data from leaving at all, regardless of whether
-  it's ever logged? (Lab 13 is about exactly this kind of thinking, applied
+  it's ever logged? (Lab 16 is about exactly this kind of thinking, applied
   to the very first step of the chain instead of the last.)
 
 ## Cleanup
@@ -100,4 +100,4 @@ it writes nothing. Delete `fake_secrets.txt` from the Desktop if you added
 it just for this lab. On the lab server, delete `collected.log` between
 runs if you want a clean slate.
 
-**Next:** [Lab 13 — Close the Door: Preventing HID Injection](../Lab13_HardeningCapstone/).
+**Next:** [Lab 14 — Anti-Forensics: Clearing Your Own Tracks](../Lab14_AntiForensics/).

@@ -1,5 +1,5 @@
 <#
-Lab 13 cleanup - remove the Device Installation Restriction policy set by
+Lab 16 cleanup - remove the Device Installation Restriction policy set by
 harden.ps1, restoring normal USB device installation. Run as Administrator.
 #>
 

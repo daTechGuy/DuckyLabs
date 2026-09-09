@@ -90,4 +90,4 @@ See [cleanup.ps1](cleanup.ps1) — this one's fully reversible (unlike
 Lab 08's ACL changes), but a snapshot revert is still the cleanest reset
 between runs.
 
-**Next:** [Lab 11 — Staged Payload from Onboard USB Storage](../Lab11_StagedFromStorage/).
+**Next:** [Lab 11 — Network Forensics: Catch This on the Wire](../Lab11_NetworkForensics/).

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-DuckyLabs Lab 12 - minimal exfil-collection listener.
+DuckyLabs Lab 13 - minimal exfil-collection listener.
 
 FOR THE ISOLATED LAB NETWORK ONLY. Logs the body of any HTTP POST to
 /collect, with a timestamp and source IP, to collected.log in the current
@@ -35,5 +35,5 @@ class CollectorHandler(BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
-    print(f"Lab 12 collector listening on 0.0.0.0:{port}/collect (isolated lab network only)")
+    print(f"Lab 13 collector listening on 0.0.0.0:{port}/collect (isolated lab network only)")
     HTTPServer(('0.0.0.0', port), CollectorHandler).serve_forever()

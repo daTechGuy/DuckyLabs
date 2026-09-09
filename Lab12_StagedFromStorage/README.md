@@ -1,4 +1,4 @@
-# Lab 11 — Staged Payload from Onboard USB Storage
+# Lab 12 — Staged Payload from Onboard USB Storage
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine, no elevation required
@@ -89,4 +89,4 @@ Ducky's own storage). [cleanup.ps1](cleanup.ps1) just stops `p.exe` if
 it's still running. Physically unplug the Ducky and revert the VM
 snapshot to fully reset state between runs.
 
-**Next:** [Lab 12 — Collection & Exfiltration](../Lab12_CollectionExfil/).
+**Next:** [Lab 13 — Collection & Exfiltration](../Lab13_CollectionExfil/).

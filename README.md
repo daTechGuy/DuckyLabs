@@ -22,7 +22,7 @@ about. You'll play all of them:
 | Track | Labs | Where you run it |
 |---|---|---|
 | **Beginner** | 00–06 | A controlled lab computer, signed in as a **normal (non-admin) user**. The payloads are harmless and reversible — they open built-in apps or drop a single text file you delete afterward. |
-| **Advanced** | 07–13 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These labs install real tooling and make real, privileged changes — see the ground rules below. |
+| **Advanced** | 07–16 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These labs install real tooling and make real, privileged changes — see the ground rules below. |
 
 ## Lab index
 
@@ -44,19 +44,22 @@ about. You'll play all of them:
 | [Lab08_RogueAdminShare](Lab08_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
 | [Lab09_RegistryPersistence](Lab09_RegistryPersistence/) | Persist via HKCU Run key + Scheduled Task — no admin, no UAC prompt, unlike Lab 08 | T1547.001, T1053.005 |
 | [Lab10_StagedDownloader](Lab10_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
-| [Lab11_StagedFromStorage](Lab11_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
-| [Lab12_CollectionExfil](Lab12_CollectionExfil/) | Read a file and exfiltrate it over HTTP — collection and exfil, the tactics every other lab skips | T1005, T1041 |
-| [Lab13_HardeningCapstone](Lab13_HardeningCapstone/) | Prevention, not detection: block new HID devices with a Device Installation Restriction policy | — |
+| [Lab11_NetworkForensics](Lab11_NetworkForensics/) | No payload — capture Lab 10's own traffic live in Wireshark and catch it on the wire | — |
+| [Lab12_StagedFromStorage](Lab12_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
+| [Lab13_CollectionExfil](Lab13_CollectionExfil/) | Read a file and exfiltrate it over HTTP — collection and exfil, the tactics every other lab skips | T1005, T1041 |
+| [Lab14_AntiForensics](Lab14_AntiForensics/) | Clear Security, Sysmon, and PowerShell logs — and learn why a clear always leaves one trace | T1070.001 |
+| [Lab15_CapstoneChain](Lab15_CapstoneChain/) | Tabletop: Labs 09 + 13 chained into one incident, investigated cold with no hints which labs are involved | multiple |
+| [Lab16_HardeningCapstone](Lab16_HardeningCapstone/) | Prevention, not detection: block new HID devices with a Device Installation Restriction policy | — |
 
 > You should be comfortable with the beginner track before starting Lab 07.
-> Labs 08–12 move fast and assume you already understand DuckyScript
+> Labs 08–15 move fast and assume you already understand DuckyScript
 > timing, the Run box, how to read simple traces, and — after Lab 07 — how
 > to read a Sysmon event.
 
 ## Ground rules (read before you plug anything in)
 
 The beginner labs (00–06) are harmless, but the habits matter from day one,
-and the advanced labs (07–13) are genuinely dangerous if misused.
+and the advanced labs (07–16) are genuinely dangerous if misused.
 
 1. **Controlled machines only.** Beginner labs run on the classroom's
    controlled computers. **Advanced labs run only inside a disposable VM**
@@ -87,10 +90,13 @@ Most labs contain:
 - **`README.md`** — what it does line by line, in plain language, plus the
   exercise and discussion questions.
 - **`detect.ps1`** — the blue-team detection script (Labs 05, 06, 07, and
-  08–12). Lab 13 is prevention rather than detection, so it ships
-  `harden.ps1` and `check.ps1` instead.
+  08–15, except Lab 11). Lab 11 has no payload of its own (see below), and
+  Lab 16 is prevention rather than detection, so it ships `harden.ps1` and
+  `check.ps1` instead.
 - **`cleanup.ps1`** — best-effort reset (where a lab changes something on
-  disk). Lab 12 skips this — it writes nothing to the victim machine.
+  disk). Labs 11, 13, and 14 skip this — 11 and 13 write nothing to the
+  victim machine, and 14's whole point is that its effects (cleared logs)
+  *can't* be cleaned up.
 
 ## Suggested flow (the purple loop)
 
@@ -104,3 +110,7 @@ in Lab 06:
    did.
 3. **🟣 Purple:** compare predictions vs. findings, write a detection rule in
    plain English, then ask how you'd change the payload to evade it.
+
+Lab 15 runs this same loop at full scale — chaining several labs' payloads
+into one incident and investigating it cold, with a proper incident report
+instead of a few discussion questions.

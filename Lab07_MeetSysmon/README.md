@@ -11,8 +11,8 @@ riding on it.
 **Payload:** [payload.txt](payload.txt) — same "open Notepad" idea as Lab 00
 **Config:** [sysmonconfig-beginner.xml](sysmonconfig-beginner.xml)
 **Where to run it:** your disposable advanced-track VM, as **Administrator**
-for setup. This is also where you'll run Labs 08–12, so Sysmon stays
-installed for the rest of the advanced track.
+for setup. This is also where you'll run the rest of the advanced track, so
+Sysmon stays installed through Lab 15.
 
 ---
 
@@ -73,7 +73,7 @@ in the message text:
   if a process were instead launched by another process quietly, with no
   visible window at all?
 - This config only watches Event ID 1. Sysmon can also log registry
-  changes (ID 13, see Lab 09), network connections (ID 3, see Lab 12), and
+  changes (ID 13, see Lab 09), network connections (ID 3, see Lab 13), and
   file creation (ID 11) — you'll see these referenced across the rest of
   the advanced track. Why do you think a beginner config should start with
   just one event type instead of turning everything on at once?
@@ -81,7 +81,7 @@ in the message text:
 ## Cleanup
 
 Nothing to clean up from the payload itself (close Notepad, don't save).
-**Leave Sysmon installed** — every remaining advanced lab through Lab 12
+**Leave Sysmon installed** — every remaining advanced lab through Lab 15
 checks its log, and this setup step is exactly what makes their "if Sysmon
 is installed" sections actually show something.
 

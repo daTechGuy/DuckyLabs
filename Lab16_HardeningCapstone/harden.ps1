@@ -1,5 +1,5 @@
 <#
-Lab 13 - Apply a Device Installation Restriction policy that blocks NEW
+Lab 16 - Apply a Device Installation Restriction policy that blocks NEW
 HID-class devices (keyboards, including a Rubber Ducky) from ever
 installing their driver on this machine.
 
