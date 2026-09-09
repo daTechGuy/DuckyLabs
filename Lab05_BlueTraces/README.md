@@ -62,7 +62,7 @@ ever touching Win+R — go back and run this script after that payload if you
 haven't already. Real defenders layer on tools like **Sysmon** and the
 **Windows event logs** that record activity the user can't easily erase.
 You'll meet those starting in **Lab 07**, and use them throughout the
-**Advanced track (Labs 07–11)**. For now, the win is
+**Advanced track (Labs 07–13)**. For now, the win is
 the instinct: *attacks leave traces, and I know how to start looking.*
 
 Next, **Lab 06** puts red and blue in the same room at the same time — that's

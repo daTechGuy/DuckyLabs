@@ -11,7 +11,7 @@ riding on it.
 **Payload:** [payload.txt](payload.txt) — same "open Notepad" idea as Lab 00
 **Config:** [sysmonconfig-beginner.xml](sysmonconfig-beginner.xml)
 **Where to run it:** your disposable advanced-track VM, as **Administrator**
-for setup. This is also where you'll run Labs 08–10, so Sysmon stays
+for setup. This is also where you'll run Labs 08–12, so Sysmon stays
 installed for the rest of the advanced track.
 
 ---
@@ -72,16 +72,17 @@ in the message text:
   so far, what would you expect that parent to be? What would it look like
   if a process were instead launched by another process quietly, with no
   visible window at all?
-- This config only watches Event ID 1. Sysmon can also log network
-  connections (ID 3) and file creation (ID 11) — you'll see both referenced
-  in Lab 09's detection script. Why do you think a beginner config should
-  start with just one event type instead of turning everything on at once?
+- This config only watches Event ID 1. Sysmon can also log registry
+  changes (ID 13, see Lab 09), network connections (ID 3, see Lab 12), and
+  file creation (ID 11) — you'll see these referenced across the rest of
+  the advanced track. Why do you think a beginner config should start with
+  just one event type instead of turning everything on at once?
 
 ## Cleanup
 
 Nothing to clean up from the payload itself (close Notepad, don't save).
-**Leave Sysmon installed** — Labs 08, 09, and 10 all check its log, and this
-setup step is exactly what makes their "if Sysmon is installed" sections
-actually show something.
+**Leave Sysmon installed** — every remaining advanced lab through Lab 12
+checks its log, and this setup step is exactly what makes their "if Sysmon
+is installed" sections actually show something.
 
 **Next:** [Lab 08 — Rogue Admin Account + Open SMB Share](../Lab08_RogueAdminShare/).

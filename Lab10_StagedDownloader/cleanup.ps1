@@ -1,5 +1,5 @@
 <#
-Lab 09 cleanup — run on the victim VM. Unlike Lab 08, this payload's
+Lab 10 cleanup — run on the victim VM. Unlike Lab 08, this payload's
 effects are fully reversible: kill the dropped process if still running
 and delete the dropped file from %TEMP%.
 #>

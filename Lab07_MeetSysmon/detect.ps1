@@ -31,4 +31,4 @@ Write-Host "  a normal user can't edit or clear. That's the difference between a
 Write-Host "  registry breadcrumb and a real audit trail."
 
 Write-Host ""
-Write-Host "=== Done. Keep Sysmon installed - Labs 08, 09, and 10 all check its log too. ===" -ForegroundColor Green
+Write-Host "=== Done. Keep Sysmon installed - every remaining advanced lab through Lab 12 checks its log too. ===" -ForegroundColor Green

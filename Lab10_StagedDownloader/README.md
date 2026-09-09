@@ -1,4 +1,4 @@
-# Lab 09 — Staged Download-and-Execute
+# Lab 10 — Staged Download-and-Execute
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine, no elevation required
@@ -90,4 +90,4 @@ See [cleanup.ps1](cleanup.ps1) — this one's fully reversible (unlike
 Lab 08's ACL changes), but a snapshot revert is still the cleanest reset
 between runs.
 
-**Next:** [Lab 10 — Staged Payload from Onboard USB Storage](../Lab10_StagedFromStorage/).
+**Next:** [Lab 11 — Staged Payload from Onboard USB Storage](../Lab11_StagedFromStorage/).

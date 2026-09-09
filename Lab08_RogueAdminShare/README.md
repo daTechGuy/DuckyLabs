@@ -75,4 +75,4 @@ attempt to strip the `icacls` grant from every file under C:\; that is
 exactly the kind of operation you don't want to run against anything but
 a disposable VM.
 
-**Next:** [Lab 09 — Staged Download-and-Execute](../Lab09_StagedDownloader/).
+**Next:** [Lab 09 — Persistence: Registry Run Key & Scheduled Task](../Lab09_RegistryPersistence/).

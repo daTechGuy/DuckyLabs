@@ -1,5 +1,5 @@
 <#
-Lab 11 - Verify the policy is active and look for the resulting driver
+Lab 13 - Verify the policy is active and look for the resulting driver
 installation failure in the System event log. Reads only, changes nothing.
 Run as Administrator (needed to read some event log entries reliably).
 #>
