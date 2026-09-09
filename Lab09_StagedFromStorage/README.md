@@ -1,4 +1,4 @@
-# Lab 06 — Staged Payload from Onboard USB Storage
+# Lab 09 — Staged Payload from Onboard USB Storage
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine, no elevation required
@@ -8,7 +8,7 @@ before class - older or single-mode units don't.
 **ATT&CK techniques:** T1200 (Hardware Additions), T1059.001 (PowerShell),
 T1204.002 (User Execution: Malicious File)
 
-Unlike Lab 05 (pulls a file over the network), this payload carries its
+Unlike Lab 08 (pulls a file over the network), this payload carries its
 own executable on the Ducky's onboard storage — nothing ever touches a
 network interface. That makes it viable against fully air-gapped/offline
 machines, and it leaves different artifacts than a network-based dropper.
@@ -30,7 +30,7 @@ ATTACKMODE HID STORAGE
                    HID keyboard and a USB mass storage device
                    simultaneously.
 DELAY 3000         Storage devices take longer to enumerate and mount
-                   than a keyboard alone - this is 3x Lab 04/05's
+                   than a keyboard alone - this is 3x Lab 07/08's
                    initial delay for that reason. Too short a delay
                    here is the #1 cause of this payload failing.
 GUI r              Open the Run dialog.

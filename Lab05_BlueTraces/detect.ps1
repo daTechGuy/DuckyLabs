@@ -1,11 +1,11 @@
 # ============================================================
-# Lab 02 (BLUE) - Find the traces of a keyboard-injection attack
+# Lab 05 (BLUE) - Find the traces of a keyboard-injection attack
 #
 # Beginner detection. No Sysmon, no deep event-log archaeology -
 # just the breadcrumbs a Rubber Ducky leaves that YOU can read.
 #
 # HOW TO USE:
-#   1. Run the Lab 00 and/or Lab 01 payload on this computer first.
+#   1. Run one of the Lab 00, 01, 02, or 04 payloads on this computer first.
 #   2. Then run this script (right-click > Run with PowerShell, or
 #      paste it into a PowerShell window).
 #   3. Read the output and match it against what the payload did.

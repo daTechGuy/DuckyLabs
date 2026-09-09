@@ -1,0 +1,37 @@
+REM ============================================================
+REM Lab 01: Read and Write DuckyScript
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Harmless: opens Notepad and types a few lines. No admin
+REM rights, nothing installed. YOUR JOB: edit the two lines
+REM marked TODO before you load this onto the Ducky.
+REM ============================================================
+
+REM Wait for Windows to recognize the "keyboard".
+DELAY 1000
+
+REM GUI r = hold the Windows key, tap R. Opens the Run box.
+GUI r
+DELAY 300
+
+REM STRING types text. It does NOT press Enter for you.
+STRING notepad
+
+REM ENTER presses the Enter key on its own.
+ENTER
+
+REM Wait for Notepad to actually open before typing into it.
+DELAY 800
+
+REM --- Everything below this line is plain typing, one line at a time ---
+STRING This payload was written, not just run.
+ENTER
+STRING TODO: replace this line with your own name.
+ENTER
+STRING TODO: replace this line with today's date.
+ENTER
+
+REM TAB moves focus without typing anything - try it: it jumps
+REM from Notepad's text area to its menu bar.
+TAB

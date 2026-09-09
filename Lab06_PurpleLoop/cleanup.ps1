@@ -1,5 +1,5 @@
 # ============================================================
-# Lab 03 (PURPLE) - Cleanup
+# Lab 06 (PURPLE) - Cleanup
 # Deletes the YOU_WERE_HERE.txt file this lab drops on the Desktop.
 # Safe: it only removes that one lab file if it exists.
 # ============================================================

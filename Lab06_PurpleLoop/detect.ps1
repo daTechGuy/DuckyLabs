@@ -1,7 +1,7 @@
 # ============================================================
-# Lab 03 (PURPLE) - Hunt the artifact this payload left behind
+# Lab 06 (PURPLE) - Hunt the artifact this payload left behind
 #
-# Run this AFTER the Lab 03 payload. It looks for:
+# Run this AFTER the Lab 06 payload. It looks for:
 #   1. New file(s) recently created on the Desktop
 #   2. The 'powershell' command in the Run-box history
 #   3. How close in time those two events were (the machine tell)

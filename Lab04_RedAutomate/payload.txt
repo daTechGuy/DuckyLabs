@@ -1,5 +1,5 @@
 REM ============================================================
-REM Lab 01 (RED): Automate the keyboard
+REM Lab 04 (RED): Automate the keyboard
 REM Target: Windows 10/11, ordinary local user account
 REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
 REM

@@ -21,27 +21,30 @@ about. You'll play all of them:
 
 | Track | Labs | Where you run it |
 |---|---|---|
-| **Beginner** | 00–03 | A controlled lab computer, signed in as a **normal (non-admin) user**. The payloads are harmless and reversible — they open built-in apps or drop a single text file you delete afterward. |
-| **Advanced** | 04–06 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These payloads make real, privileged changes — see the ground rules below. |
+| **Beginner** | 00–06 | A controlled lab computer, signed in as a **normal (non-admin) user**. The payloads are harmless and reversible — they open built-in apps or drop a single text file you delete afterward. |
+| **Advanced** | 07–09 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These payloads make real, privileged changes — see the ground rules below. |
 
 ## Lab index
 
-### Beginner track — learn the three teams
+### Beginner track — foundations, then the three teams
 | Lab | Team | Technique |
 |---|---|---|
 | [Lab00_HelloWorld](Lab00_HelloWorld/) | — | Your first payload: open Notepad, type "Hello, World!" + the "why does a computer trust a keyboard?" idea |
-| [Lab01_RedAutomate](Lab01_RedAutomate/) | 🔴 Red | Automate the keyboard: one payload drives several apps instantly, as you |
-| [Lab02_BlueTraces](Lab02_BlueTraces/) | 🔵 Blue | Find the breadcrumbs an attack leaves (Run history, recent files, the "too fast" tell) |
-| [Lab03_PurpleLoop](Lab03_PurpleLoop/) | 🟣 Purple | Predict → run → detect → improve, on a payload that leaves a real file on disk |
+| [Lab01_ScriptBasics](Lab01_ScriptBasics/) | — | Read and write DuckyScript yourself: the core commands, and a payload you edit before running |
+| [Lab02_TimingDebug](Lab02_TimingDebug/) | — | Fix a payload that's broken on purpose: why `DELAY` matters and how to debug bad timing |
+| [Lab03_BeyondRunBox](Lab03_BeyondRunBox/) | — | Open an app without ever touching Win+R — keyboard-only navigation beyond the Run box |
+| [Lab04_RedAutomate](Lab04_RedAutomate/) | 🔴 Red | Automate the keyboard: one payload drives several apps instantly, as you |
+| [Lab05_BlueTraces](Lab05_BlueTraces/) | 🔵 Blue | Find the breadcrumbs an attack leaves (Run history, recent files, the "too fast" tell) |
+| [Lab06_PurpleLoop](Lab06_PurpleLoop/) | 🟣 Purple | Predict → run → detect → improve, on a payload that leaves a real file on disk |
 
 ### Advanced track — real attacks in a disposable VM
 | Lab | Technique | ATT&CK |
 |---|---|---|
-| [Lab04_RogueAdminShare](Lab04_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
-| [Lab05_StagedDownloader](Lab05_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
-| [Lab06_StagedFromStorage](Lab06_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
+| [Lab07_RogueAdminShare](Lab07_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
+| [Lab08_StagedDownloader](Lab08_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
+| [Lab09_StagedFromStorage](Lab09_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
 
-> You should be comfortable with the beginner track before starting Lab 04.
+> You should be comfortable with the beginner track before starting Lab 07.
 > The advanced labs move fast and assume you already understand DuckyScript
 > timing, the Run box, and how to read simple traces.
 
@@ -86,7 +89,7 @@ Most labs contain:
 ## Suggested flow (the purple loop)
 
 Every lab — beginner or advanced — is best run through the same loop you learn
-in Lab 03:
+in Lab 06:
 
 1. **🔴 Red:** read the payload, *predict* what it will do and what traces it
    will leave, then run it against the lab machine.

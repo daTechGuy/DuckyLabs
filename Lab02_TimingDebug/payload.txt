@@ -1,0 +1,27 @@
+REM ============================================================
+REM Lab 02 (BROKEN ON PURPOSE): Timing - why Ducks fail
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Every DELAY below is set to 1 millisecond - nowhere near
+REM enough time for Windows to keep up. Run this once as-is and
+REM watch it fail, then fix the DELAY values one at a time until
+REM it works every time. Harmless either way: worst case is some
+REM stray keystrokes land in the wrong window.
+REM ============================================================
+
+REM BUG: 1ms isn't enough time for the Ducky to be recognized
+REM as a keyboard yet on some machines.
+DELAY 1
+
+GUI r
+REM BUG: the Run box needs time to open before we type into it.
+DELAY 1
+STRING notepad
+ENTER
+
+REM BUG: Notepad needs time to launch before it can receive text.
+DELAY 1
+STRING If you can read this cleanly, your timing fix worked.
+ENTER
+STRING If this looks scrambled or half-missing, a DELAY above is still too short.

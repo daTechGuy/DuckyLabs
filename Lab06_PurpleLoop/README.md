@@ -1,4 +1,4 @@
-# Lab 03 — 🟣 Purple: Predict, Run, Detect, Improve
+# Lab 06 — 🟣 Purple: Predict, Run, Detect, Improve
 
 **This is where it all comes together.** Red and blue aren't enemies — they're
 two halves of one job. The **purple team** is what you get when the attacker
@@ -15,7 +15,8 @@ detection sharper. That loop is the real goal of this whole course.
 
 ## What's different about this payload
 
-Labs 00–01 only *opened apps* — they didn't leave a real file behind. This one
+The labs before this one only *opened apps* or typed text — they didn't
+leave a real file behind. This one
 uses a single PowerShell command to **write a file to your Desktop**
 (`YOU_WERE_HERE.txt`). That's your first taste of a payload that leaves an
 *artifact on disk*, which is exactly the kind of thing defenders hunt for. It
@@ -30,7 +31,7 @@ solo, play both parts and be honest with yourself.
 Read [payload.txt](payload.txt) line by line. **Write down your predictions**
 *before* anything runs:
 - What file will appear, and where?
-- What will show up in the Run-box history from Lab 02?
+- What will show up in the Run-box history from Lab 05?
 - Will this need admin rights? Why or why not?
 
 ### Step 2 — 🔴 Red runs it
@@ -60,7 +61,7 @@ Put the predictions next to the findings:
 Red alone just breaks things. Blue alone guesses in the dark. **Purple** —
 attack and defense talking to each other — is how real security teams turn "we
 got hit" into "we'll catch it next time." Everything in the Advanced track
-(Labs 04–06) is meant to be run through this same loop: predict, run, detect,
+(Labs 07–09) is meant to be run through this same loop: predict, run, detect,
 improve.
 
 ## Cleanup

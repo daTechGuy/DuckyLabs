@@ -1,4 +1,4 @@
-# Lab 01 — 🔴 Red: Automate the Keyboard
+# Lab 04 — 🔴 Red: Automate the Keyboard
 
 **You are the attacker now.** In Lab 00 the Ducky said hello. Here you'll
 feel what makes it powerful: **one payload can drive the whole computer,
@@ -20,6 +20,10 @@ account can open an app, delete a file, or visit a website, the Ducky can too
 That's the mindset shift for this lab: the danger isn't some exotic exploit.
 It's that a trusted "keyboard" can do *anything the current user can do*, and
 do it before anyone in the room can pull the plug.
+
+This lab still uses the Run box (`GUI r`) like Labs 00 and 02, and skips the
+Start-Menu-search approach from Lab 03 — worth noticing which trail each
+leaves once you get to Lab 05.
 
 ## What the payload does
 
@@ -55,5 +59,5 @@ Editing a payload is how you learn what's possible. Try these (all harmless):
 
 If a payload can open Calculator in one second, what could a *malicious* one
 do in that same second as your user account? Write down three things before
-you move on. In **Lab 02** you switch to the blue team and start finding the
+you move on. In **Lab 05** you switch to the blue team and start finding the
 evidence that attacks like this leave behind.

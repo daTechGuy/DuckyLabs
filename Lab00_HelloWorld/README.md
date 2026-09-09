@@ -32,17 +32,21 @@ This course is built around the three "teams" security professionals talk
 about:
 
 - 🔴 **Red team** — plays the attacker. Builds and runs payloads to see what
-  is possible. (Lab 01)
+  is possible. (Lab 04)
 - 🔵 **Blue team** — plays the defender. Hunts for the traces an attack left
-  behind, and figures out how to catch it. (Lab 02)
+  behind, and figures out how to catch it. (Lab 05)
 - 🟣 **Purple team** — red and blue working *together*: the attacker explains
   what they did, the defender detects it, and together they make the
   detection better. Purple is the whole point — attack knowledge exists so
-  defense can improve. (Lab 03)
+  defense can improve. (Lab 06)
 
 You cannot defend against something you don't understand, so every student
 learns to run the attack first. That's normal and expected in a controlled
 lab like this one.
+
+Before any of that, **Labs 01–03** slow down and build the raw skills every
+team needs: reading and writing DuckyScript, fixing broken timing, and
+seeing how much a keyboard can do without ever touching the Run box.
 
 ## What the payload does, line by line
 
@@ -79,7 +83,7 @@ see "When payloads go wrong" below.
 - How long did the whole thing take? Could you have stopped it in time?
 - The Ducky ran as *you*, with *your* permissions. What could a normal user
   account do on this computer that you would NOT want an attacker doing?
-- Nothing here was hidden. In Lab 02 you'll play defender and look for the
+- Nothing here was hidden. In Lab 05 you'll play defender and look for the
   breadcrumbs this left. What breadcrumbs do you think it left already?
 
 ## When payloads go wrong (timing)
@@ -94,3 +98,5 @@ see this theme again in every lab.
 
 Close Notepad and click **Don't Save**. That's it — this lab leaves nothing
 behind on disk.
+
+**Next:** [Lab 01 — Read and Write DuckyScript](../Lab01_ScriptBasics/).

@@ -1,12 +1,12 @@
-# Lab 02 — 🔵 Blue: Find the Traces
+# Lab 05 — 🔵 Blue: Find the Traces
 
-**Now you're the defender.** The red team (you, in Labs 00–01) ran some
-payloads. This lab flips the chair around: **without being told exactly what
-happened, can you find the evidence it left behind?**
+**Now you're the defender.** The red team (you, in Labs 00, 01, 02, and 04)
+ran some payloads. This lab flips the chair around: **without being told
+exactly what happened, can you find the evidence it left behind?**
 
 **Detection script:** [detect.ps1](detect.ps1)
-**Where to run it:** the same lab computer, after the Lab 00 / Lab 01 payload
-has run. Normal user is fine.
+**Where to run it:** the same lab computer, after any Lab 00, 01, 02, or 04
+payload has run. Normal user is fine.
 
 ---
 
@@ -30,7 +30,8 @@ Three beginner-friendly breadcrumbs:
 
 ## Do the exercise
 
-1. Make sure you've run the Lab 00 or Lab 01 payload on this machine.
+1. Make sure you've run one of the Lab 00, 01, 02, or 04 payloads on this
+   machine.
 2. Run `detect.ps1` (right-click → **Run with PowerShell**, or paste it into
    a PowerShell window). It only *reads* information — it changes nothing.
 3. Read the three sections of output.
@@ -55,11 +56,13 @@ Tools hide the lesson. Try finding one breadcrumb yourself:
 ## The limits of this (and where it goes next)
 
 These breadcrumbs are easy to read, but also easy for an attacker to avoid —
-a payload that *doesn't* use the Run box won't show up in RunMRU at all. Real
-defenders layer on tools like **Sysmon** and the **Windows event logs** that
-record activity the user can't easily erase. You'll meet those in the
-**Advanced track (Labs 04–06)**. For now, the win is the instinct: *attacks
-leave traces, and I know how to start looking.*
+a payload that *doesn't* use the Run box won't show up in RunMRU at all. You
+already saw that gap in **Lab 03**, where the payload opened Notepad without
+ever touching Win+R — go back and run this script after that payload if you
+haven't already. Real defenders layer on tools like **Sysmon** and the
+**Windows event logs** that record activity the user can't easily erase.
+You'll meet those in the **Advanced track (Labs 07–09)**. For now, the win is
+the instinct: *attacks leave traces, and I know how to start looking.*
 
-Next, **Lab 03** puts red and blue in the same room at the same time — that's
+Next, **Lab 06** puts red and blue in the same room at the same time — that's
 the purple team.

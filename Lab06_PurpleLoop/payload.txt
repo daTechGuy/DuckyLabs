@@ -1,5 +1,5 @@
 REM ============================================================
-REM Lab 03 (PURPLE): a payload that leaves a visible artifact
+REM Lab 06 (PURPLE): a payload that leaves a visible artifact
 REM Target: Windows 10/11, ordinary local user account
 REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
 REM
