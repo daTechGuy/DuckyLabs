@@ -1,5 +1,5 @@
 <#
-Lab 07 best-effort cleanup — run on the victim VM (as Administrator).
+Lab 08 best-effort cleanup — run on the victim VM (as Administrator).
 
 Prefer reverting a VM snapshot instead. This script does NOT undo the
 `icacls c:* /grant ts:(OI)(CI)F` step: stripping a recursive ACE back out

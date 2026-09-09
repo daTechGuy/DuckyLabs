@@ -1,4 +1,4 @@
-# Lab 07 — Rogue Admin Account + Open SMB Share
+# Lab 08 — Rogue Admin Account + Open SMB Share
 
 **Payload:** [payload.txt](payload.txt)
 **Target:** Windows 10/11, local (non-domain) machine
@@ -74,3 +74,5 @@ quick re-run, see [cleanup.ps1](cleanup.ps1) — but note it does **not**
 attempt to strip the `icacls` grant from every file under C:\; that is
 exactly the kind of operation you don't want to run against anything but
 a disposable VM.
+
+**Next:** [Lab 09 — Staged Download-and-Execute](../Lab09_StagedDownloader/).

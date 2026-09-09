@@ -1,5 +1,5 @@
 <#
-Lab 09 cleanup — run on the victim VM. The staged executable runs
+Lab 10 cleanup — run on the victim VM. The staged executable runs
 directly from the Ducky's own storage, so nothing is written to the
 victim's disk; this just stops it if still running. Physically unplug
 the Ducky and revert the VM snapshot for a full reset.

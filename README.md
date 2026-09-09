@@ -22,7 +22,7 @@ about. You'll play all of them:
 | Track | Labs | Where you run it |
 |---|---|---|
 | **Beginner** | 00–06 | A controlled lab computer, signed in as a **normal (non-admin) user**. The payloads are harmless and reversible — they open built-in apps or drop a single text file you delete afterward. |
-| **Advanced** | 07–09 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These payloads make real, privileged changes — see the ground rules below. |
+| **Advanced** | 07–11 | A **disposable virtual machine** you have **admin rights** on and can snapshot/revert. These labs install real tooling and make real, privileged changes — see the ground rules below. |
 
 ## Lab index
 
@@ -40,18 +40,21 @@ about. You'll play all of them:
 ### Advanced track — real attacks in a disposable VM
 | Lab | Technique | ATT&CK |
 |---|---|---|
-| [Lab07_RogueAdminShare](Lab07_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
-| [Lab08_StagedDownloader](Lab08_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
-| [Lab09_StagedFromStorage](Lab09_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
+| [Lab07_MeetSysmon](Lab07_MeetSysmon/) | Install Sysmon and read your first real process-creation event, before anything's at stake | — |
+| [Lab08_RogueAdminShare](Lab08_RogueAdminShare/) | Rogue local admin account + open SMB share of `C:\` | T1136.001, T1098, T1021.002, T1222.001 |
+| [Lab09_StagedDownloader](Lab09_StagedDownloader/) | Staged download-and-execute via hidden PowerShell | T1059.001, T1105, T1204.002 |
+| [Lab10_StagedFromStorage](Lab10_StagedFromStorage/) | Staged payload run from the Ducky's own onboard storage | T1200, T1059.001, T1204.002 |
+| [Lab11_HardeningCapstone](Lab11_HardeningCapstone/) | Prevention, not detection: block new HID devices with a Device Installation Restriction policy | — |
 
 > You should be comfortable with the beginner track before starting Lab 07.
-> The advanced labs move fast and assume you already understand DuckyScript
-> timing, the Run box, and how to read simple traces.
+> Labs 08–10 move fast and assume you already understand DuckyScript
+> timing, the Run box, how to read simple traces, and — after Lab 07 — how
+> to read a Sysmon event.
 
 ## Ground rules (read before you plug anything in)
 
-The beginner labs (00–03) are harmless, but the habits matter from day one,
-and the advanced labs (04–06) are genuinely dangerous if misused.
+The beginner labs (00–06) are harmless, but the habits matter from day one,
+and the advanced labs (07–11) are genuinely dangerous if misused.
 
 1. **Controlled machines only.** Beginner labs run on the classroom's
    controlled computers. **Advanced labs run only inside a disposable VM**
@@ -81,8 +84,9 @@ Most labs contain:
 - **`payload.txt`** — the DuckyScript to load onto the Rubber Ducky.
 - **`README.md`** — what it does line by line, in plain language, plus the
   exercise and discussion questions.
-- **`detect.ps1`** — the blue-team detection script (labs 02, 03, and all
-  advanced labs).
+- **`detect.ps1`** — the blue-team detection script (Labs 05, 06, 07, and
+  08–10). Lab 11 is prevention rather than detection, so it ships
+  `harden.ps1` and `check.ps1` instead.
 - **`cleanup.ps1`** — best-effort reset (where a lab changes something on
   disk).
 

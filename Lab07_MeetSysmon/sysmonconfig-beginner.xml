@@ -1,0 +1,19 @@
+<!--
+DuckyLabs beginner Sysmon config.
+
+Deliberately narrow: only Process Creation (Event ID 1) is enabled. Real
+configs (e.g. SwiftOnSecurity's) enable a dozen event types with detailed
+filters; we enable exactly one, with no filters, so every process-creation
+event is logged and the log stays small and readable for a first look.
+
+onmatch="exclude" with no rules inside it means "exclude nothing" - i.e.
+log everything for this event type.
+-->
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="exclude">
+      </ProcessCreate>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

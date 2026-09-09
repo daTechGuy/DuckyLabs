@@ -61,10 +61,12 @@ Put the predictions next to the findings:
 Red alone just breaks things. Blue alone guesses in the dark. **Purple** —
 attack and defense talking to each other — is how real security teams turn "we
 got hit" into "we'll catch it next time." Everything in the Advanced track
-(Labs 07–09) is meant to be run through this same loop: predict, run, detect,
+(Labs 07–11) is meant to be run through this same loop: predict, run, detect,
 improve.
 
 ## Cleanup
 
 Run [cleanup.ps1](cleanup.ps1), or just delete `YOU_WERE_HERE.txt` from the
 Desktop. Nothing else was changed.
+
+**Next:** [Lab 07 — Meet Sysmon: Read One Real Event Log](../Lab07_MeetSysmon/).

@@ -1,5 +1,5 @@
 <#
-Lab 09 detection script — run on the victim VM after the payload has
+Lab 10 detection script — run on the victim VM after the payload has
 executed. Surfaces artifacts left by payload.txt without assuming prior
 knowledge of what it did.
 #>

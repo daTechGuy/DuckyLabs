@@ -1,0 +1,17 @@
+REM ============================================================
+REM Lab 07: Meet Sysmon - generate one event to read
+REM Target: Windows 10/11, VM with Sysmon installed (see README)
+REM Hardware: Hak5 USB Rubber Ducky (DuckyScript 3.0)
+REM
+REM Harmless: opens Notepad via the Run box, same as Lab 00 and
+REM Lab 04. The point isn't the payload - it's reading the ONE
+REM Sysmon event this creates, in detect.ps1.
+REM ============================================================
+
+DELAY 1000
+GUI r
+DELAY 300
+STRING notepad
+ENTER
+DELAY 800
+STRING This Notepad launch is about to show up in Sysmon Event ID 1.
